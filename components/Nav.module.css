@@ -1,0 +1,92 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(41, 34, 56, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: box-shadow 0.3s;
+}
+.navScrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.35); }
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo { display: flex; align-items: baseline; gap: 12px; }
+.logoMark {
+  font-family: var(--font-bebas, sans-serif);
+  font-size: 28px;
+  color: var(--blue);
+  letter-spacing: 0.08em;
+}
+.logoSub {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(217,220,248,0.55);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.links a {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.18s;
+}
+.links a:hover { color: var(--blue); }
+
+.cta {
+  background: var(--blue) !important;
+  color: var(--purple) !important;
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700 !important;
+}
+.cta:hover { opacity: 0.85; }
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.burger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.22s;
+}
+.burgerActive span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burgerActive span:nth-child(2) { opacity: 0; }
+.burgerActive span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .burger { display: flex; }
+  .links {
+    display: none;
+    position: fixed;
+    inset: 72px 0 0 0;
+    background: var(--purple);
+    flex-direction: column;
+    padding: 40px 24px;
+    gap: 28px;
+    z-index: 99;
+  }
+  .linksOpen { display: flex; }
+  .links a { font-size: 18px; }
+}

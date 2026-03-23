@@ -1,0 +1,36 @@
+.section { background: var(--white); }
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.text p { color: var(--text-light); margin-bottom: 20px; font-size: 16px; }
+.text .btn { margin-top: 16px; }
+
+.cards { display: flex; flex-direction: column; gap: 24px; }
+
+.card {
+  background: var(--blue);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.icon { width: 48px; height: 48px; color: var(--purple); }
+
+.card h3 {
+  font-family: var(--font-bebas, sans-serif);
+  font-size: 26px;
+  color: var(--purple);
+}
+
+.card p { font-size: 14px; color: var(--navy); line-height: 1.65; }
+
+@media (max-width: 1024px) {
+  .inner { grid-template-columns: 1fr; gap: 60px; }
+}

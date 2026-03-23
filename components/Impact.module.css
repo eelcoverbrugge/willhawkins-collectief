@@ -1,0 +1,21 @@
+.section { background: var(--navy); padding-block: 100px; }
+.inner { display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: center; }
+
+.quote p {
+  font-family: var(--font-bebas, sans-serif);
+  font-size: clamp(36px, 4vw, 56px);
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.quote cite { font-size: 13px; font-style: normal; color: rgba(255,255,255,0.42); letter-spacing: 0.1em; }
+
+.stats { display: flex; flex-direction: column; gap: 40px; }
+.stat { text-align: center; }
+.statNum { display: block; font-family: var(--font-bebas, sans-serif); font-size: 72px; color: var(--blue); line-height: 1; margin-bottom: 8px; }
+.statLabel { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); line-height: 1.5; white-space: pre-line; }
+
+@media (max-width: 768px) {
+  .inner { grid-template-columns: 1fr; gap: 48px; }
+  .stats { flex-direction: row; justify-content: space-around; }
+}

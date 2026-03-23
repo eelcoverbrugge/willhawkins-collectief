@@ -1,0 +1,32 @@
+.section { background: var(--purple); }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 40px;
+  transition: background 0.22s;
+}
+.card:hover { background: rgba(255,255,255,0.09); }
+
+.num {
+  display: block;
+  font-family: var(--font-bebas, sans-serif);
+  font-size: 64px;
+  color: var(--blue);
+  opacity: 0.22;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-family: var(--font-bebas, sans-serif);
+  font-size: 32px;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.card p { font-size: 15px; color: rgba(255,255,255,0.62); line-height: 1.7; }
+
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
