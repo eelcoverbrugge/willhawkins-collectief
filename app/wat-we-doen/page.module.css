@@ -1,0 +1,33 @@
+.diensten { background: var(--white); }
+.diensten .container { display: flex; flex-direction: column; gap: 80px; }
+
+.dienst { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.dienstReverse { direction: rtl; }
+.dienstReverse > * { direction: ltr; }
+
+.dienstPhoto { position: relative; height: 440px; border-radius: var(--radius); overflow: hidden; }
+.dienstPhoto img { object-fit: cover; }
+
+.dienstText {}
+.dienstNum { font-family: var(--font-bebas, sans-serif); font-size: 80px; color: var(--blue); opacity: 0.18; display: block; line-height: 1; margin-bottom: 8px; }
+.dienstText h2 { font-family: var(--font-bebas, sans-serif); font-size: 52px; color: var(--purple); margin-bottom: 20px; line-height: 1; }
+.dienstText p { font-size: 16px; color: var(--text-light); line-height: 1.8; }
+
+.werkwijze { background: var(--purple); }
+.stappen { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+.stap { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 36px 28px; }
+.stapNum { font-family: var(--font-bebas, sans-serif); font-size: 64px; color: var(--blue); opacity: 0.35; display: block; line-height: 1; margin-bottom: 12px; }
+.stap h3 { font-family: var(--font-bebas, sans-serif); font-size: 28px; color: var(--white); margin-bottom: 12px; }
+.stap p { font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.7; }
+
+@media (max-width: 1024px) {
+  .dienst, .dienstReverse { grid-template-columns: 1fr; direction: ltr; gap: 32px; }
+  .dienstPhoto { height: 300px; }
+  .stappen { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .stappen { grid-template-columns: 1fr; }
+  .dienstPhoto { height: 240px; }
+  .dienstText h2 { font-size: 38px; }
+}

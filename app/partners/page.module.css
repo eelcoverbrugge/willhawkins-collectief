@@ -1,0 +1,22 @@
+.partners { background: var(--white); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.card { border: 1px solid rgba(41,34,56,0.1); border-radius: var(--radius); padding: 36px; transition: box-shadow 0.2s; }
+.card:hover { box-shadow: 0 8px 28px rgba(139,131,212,0.14); }
+.type { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: block; }
+.card h3 { font-family: var(--font-bebas, sans-serif); font-size: 28px; color: var(--purple); margin-bottom: 14px; }
+.card p { font-size: 14px; color: var(--text-light); line-height: 1.7; }
+
+.klanten { background: var(--purple); }
+.klantenGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.klantenItem { border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-sm); padding: 20px 24px; color: rgba(255,255,255,0.75); font-size: 15px; font-weight: 500; }
+
+.cta { background: var(--blue); }
+.ctaBox { text-align: center; max-width: 580px; margin: 0 auto; }
+.ctaBox h2 { font-family: var(--font-bebas, sans-serif); font-size: 64px; color: var(--purple); margin-bottom: 16px; }
+.ctaBox p { font-size: 17px; color: var(--navy); line-height: 1.75; margin-bottom: 32px; }
+
+@media (max-width: 1024px) { .grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) {
+  .grid, .klantenGrid { grid-template-columns: 1fr; }
+  .ctaBox h2 { font-size: 48px; }
+}

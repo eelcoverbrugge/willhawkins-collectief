@@ -19,7 +19,6 @@
   z-index: 0;
 }
 
-/* ── Aurora ───────────────────────────────────────── */
 .aurora {
   position: absolute;
   inset: 0;
@@ -28,31 +27,24 @@
   filter: blur(72px);
   z-index: 0;
 }
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  will-change: transform;
-}
-
+.blob { position: absolute; border-radius: 50%; will-change: transform; }
 .blob1 {
-  width: 700px; height: 700px;
-  top: -200px; right: -80px;
+  width: 600px; height: 600px;
+  top: -150px; right: -60px;
   background: radial-gradient(circle, rgba(155, 125, 255, 0.6) 0%, transparent 70%);
 }
 .blob2 {
-  width: 600px; height: 600px;
-  bottom: -160px; left: -100px;
+  width: 500px; height: 500px;
+  bottom: -120px; left: -80px;
   background: radial-gradient(circle, rgba(80, 55, 190, 0.5) 0%, transparent 70%);
 }
 .blob3 {
-  width: 520px; height: 520px;
-  top: 45%; left: 38%;
+  width: 440px; height: 440px;
+  top: 50%; left: 38%;
   transform: translate(-50%, -50%);
   background: radial-gradient(circle, rgba(195, 180, 255, 0.38) 0%, transparent 65%);
 }
 
-/* ── Content ──────────────────────────────────────── */
 .inner {
   position: relative;
   z-index: 1;
@@ -71,24 +63,19 @@
 
 .headline {
   font-family: var(--font-bebas, sans-serif);
-  font-size: clamp(80px, 14vw, 200px);
+  font-size: clamp(72px, 14vw, 200px);
   color: var(--white);
   line-height: 0.92;
   margin-bottom: 32px;
 }
 
-/* Clip wrapper for the slide-up reveal */
-.wordWrap {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: bottom;
-}
+.wordWrap { display: inline-block; overflow: hidden; vertical-align: bottom; }
 .wordInner { display: inline-block; }
 .wordAccent .wordInner { color: var(--blue); }
 
 .sub {
   max-width: 520px;
-  font-size: 18px;
+  font-size: clamp(15px, 2vw, 18px);
   font-weight: 300;
   color: rgba(255,255,255,0.72);
   line-height: 1.7;
@@ -97,7 +84,6 @@
 
 .actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
-/* ── Scroll hint ──────────────────────────────────── */
 .scrollHint {
   position: absolute;
   bottom: 36px;
@@ -114,7 +100,18 @@
   z-index: 1;
 }
 
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .inner { padding-block: 60px; }
+  .headline { font-size: clamp(60px, 18vw, 100px); }
+  .sub { font-size: 16px; }
+  .blob1 { width: 380px; height: 380px; }
+  .blob2 { width: 320px; height: 320px; }
+  .blob3 { width: 280px; height: 280px; }
+  .scrollHint { display: none; }
+}
 @media (max-width: 480px) {
   .actions { flex-direction: column; }
-  .actions .btn { width: 100%; justify-content: center; }
+  .actions :global(.btn) { width: 100%; justify-content: center; }
+  .tag { font-size: 11px; }
 }

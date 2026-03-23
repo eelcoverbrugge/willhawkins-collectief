@@ -1,6 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import styles from "./Nav.module.css";
+
+const links = [
+  { href: "/over-ons",    label: "Over ons" },
+  { href: "/wat-we-doen", label: "Wat we doen" },
+  { href: "/deelnemers",  label: "Deelnemers" },
+  { href: "/partners",    label: "Partners" },
+  { href: "/agenda",      label: "Agenda" },
+  { href: "/blog",        label: "Blog" },
+];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -12,32 +22,32 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = [
-    { href: "#over-ons",    label: "Over ons" },
-    { href: "#wat-we-doen", label: "Wat we doen" },
-    { href: "#deelnemers",  label: "Deelnemers" },
-    { href: "#partners",    label: "Partners" },
-    { href: "#agenda",      label: "Agenda" },
-    { href: "#blog",        label: "Blog" },
-  ];
-
   return (
     <header className={`${styles.nav} ${scrolled ? styles.navScrolled : ""}`}>
       <div className={`container ${styles.inner}`}>
-        <a href="#" className={styles.logo}>
-          <span className={styles.logoMark}>WHC</span>
-          <span className={styles.logoSub}>Will Hawkins Collectief</span>
-        </a>
+        <Link href="/" className={styles.logo} onClick={() => setOpen(false)}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.png"
+            alt=""
+            className={styles.logoImg}
+            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+          />
+          <span className={styles.logoText}>
+            <span className={styles.logoMark}>WHC</span>
+            <span className={styles.logoSub}>Will Hawkins Collectief</span>
+          </span>
+        </Link>
 
         <nav className={`${styles.links} ${open ? styles.linksOpen : ""}`}>
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
+            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a href="#contact" className={styles.cta} onClick={() => setOpen(false)}>
+          <Link href="/contact" className={styles.cta} onClick={() => setOpen(false)}>
             Contact
-          </a>
+          </Link>
         </nav>
 
         <button

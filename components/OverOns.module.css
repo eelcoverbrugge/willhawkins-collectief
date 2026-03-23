@@ -20,17 +20,12 @@
   flex-direction: column;
   gap: 12px;
 }
-
 .icon { width: 48px; height: 48px; color: var(--purple); }
-
-.card h3 {
-  font-family: var(--font-bebas, sans-serif);
-  font-size: 26px;
-  color: var(--purple);
-}
-
+.card h3 { font-family: var(--font-bebas, sans-serif); font-size: 26px; color: var(--purple); }
 .card p { font-size: 14px; color: var(--navy); line-height: 1.65; }
 
-@media (max-width: 1024px) {
-  .inner { grid-template-columns: 1fr; gap: 60px; }
+@media (max-width: 1024px) { .inner { grid-template-columns: 1fr; gap: 48px; } }
+@media (max-width: 768px) {
+  .inner { gap: 36px; }
+  .card { padding: 22px; }
 }

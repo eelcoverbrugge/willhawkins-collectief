@@ -1,16 +1,15 @@
 .section { background: #f8f8fc; }
-.grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; }
+.grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; }
 
 .card {
   background: var(--white);
   border: 1px solid rgba(41,34,56,0.08);
   border-radius: var(--radius);
-  padding: 40px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
-
 .featured { background: var(--purple); }
 .featured .phase { color: rgba(217,220,248,0.65); }
 .featured h3 { color: var(--white); }
@@ -18,7 +17,7 @@
 .featured .tag { background: rgba(255,255,255,0.12); color: var(--blue); }
 
 .phase { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
-.card h3 { font-family: var(--font-bebas, sans-serif); font-size: 36px; color: var(--purple); line-height: 1; flex: 1; white-space: pre-line; }
+.card h3 { font-family: var(--font-bebas, sans-serif); font-size: 34px; color: var(--purple); line-height: 1.05; white-space: pre-line; }
 .card p { font-size: 14px; color: var(--text-light); line-height: 1.7; flex: 1; }
 .tag {
   display: inline-block;
@@ -30,5 +29,12 @@
   width: fit-content;
 }
 
-@media (max-width: 1024px) { .grid { grid-template-columns: 1fr 1fr; } .card:first-child { grid-column: 1/-1; } }
-@media (max-width: 768px)  { .grid { grid-template-columns: 1fr; } }
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .card:first-child { grid-column: 1/-1; }
+}
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .card:first-child { grid-column: auto; }
+  .card { padding: 24px; }
+}

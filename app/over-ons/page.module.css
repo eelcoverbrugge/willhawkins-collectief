@@ -1,0 +1,38 @@
+.story { background: var(--white); }
+.storyInner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.storyInner p { color: var(--text-light); font-size: 16px; margin-bottom: 18px; line-height: 1.8; }
+
+.photoBlock { position: relative; height: 480px; border-radius: var(--radius); overflow: hidden; }
+
+.mvSection { background: #f8f8fc; }
+.mvGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.mvCard { background: var(--white); border-radius: var(--radius); padding: 40px; border: 1px solid rgba(41,34,56,0.08); }
+.mvCard h3 { font-family: var(--font-bebas, sans-serif); font-size: 36px; color: var(--purple); margin-bottom: 16px; }
+.mvCard p { font-size: 15px; color: var(--text-light); line-height: 1.75; }
+.mvCardDark { background: var(--purple); border-color: transparent; }
+.mvCardDark h3 { color: var(--blue); }
+.slogan { font-family: var(--font-bebas, sans-serif); font-size: 32px; color: var(--white) !important; line-height: 1.2; }
+
+.teamSection { background: var(--white); }
+.teamGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.teamCard { text-align: center; }
+.teamPhoto { position: relative; height: 280px; border-radius: var(--radius); overflow: hidden; margin-bottom: 20px; }
+.teamCard h3 { font-family: var(--font-bebas, sans-serif); font-size: 26px; color: var(--purple); margin-bottom: 6px; }
+.teamCard p { font-size: 14px; color: var(--text-light); }
+
+.goalsSection { background: var(--navy); }
+.goalsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.goalCard { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 36px; }
+.goalYear { font-family: var(--font-bebas, sans-serif); font-size: 48px; color: var(--blue); display: block; margin-bottom: 12px; line-height: 1; }
+.goalCard p { color: rgba(255,255,255,0.7); font-size: 15px; line-height: 1.7; }
+
+@media (max-width: 1024px) {
+  .storyInner { grid-template-columns: 1fr; gap: 40px; }
+  .mvGrid, .teamGrid, .goalsGrid { grid-template-columns: 1fr 1fr; }
+  .photoBlock { height: 340px; }
+}
+@media (max-width: 640px) {
+  .mvGrid, .teamGrid, .goalsGrid { grid-template-columns: 1fr; }
+  .teamPhoto { height: 240px; }
+  .photoBlock { height: 260px; }
+}
